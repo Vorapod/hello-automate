@@ -22,7 +22,8 @@ pipeline {
         }
         stage('run api test'){
             steps {
-                sh label: 'docker-compose', script: '''cd test/api 
+                sh label: 'docker-compose', script: '''cd test/api
+                sleep 3
                 robot greeting.robot'''
             }
             post {
