@@ -14,5 +14,17 @@ go test -v 2>&1 | go-junit-report > report.xml'''
                 }
             }
         }
+        stage('Build and start application'){
+            steps {
+                sh label: 'docker-compose', script:
+                'docker-compose up -d --build --force-recreate'
+            }
+            post {
+                always {
+                    sh label: 'docker-compose', script:
+                    'docker-compose down'
+                }
+            }
+        }
     }
 }
