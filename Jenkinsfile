@@ -23,7 +23,7 @@ pipeline {
         stage('run api test'){
             steps {
                 sh label: 'docker-compose', script: '''cd test/api
-                sleep 3
+                sleep 5
                 robot greeting.robot'''
             }
             post {
