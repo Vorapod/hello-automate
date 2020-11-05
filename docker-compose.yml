@@ -8,7 +8,7 @@ services:
       context: helloworld
       dockerfile: Dockerfile
     environment:
-      port: 8000
+      PORT: 8000
       TIME_SERVER: time-api
     ports:
       - '8000:8000'
